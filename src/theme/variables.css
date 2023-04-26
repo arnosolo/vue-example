@@ -1,0 +1,82 @@
+:root {
+  --my-color-primary: #3880ff;
+  --my-color-primary-rgb: 56,128,255;
+  --my-color-primary-contrast: #ffffff;
+  --my-color-primary-contrast-rgb: 255, 255, 255;
+  --my-color-primary-shade: #3171e0;
+  --my-color-primary-tint: #4c8dff;
+
+  --my-color-secondary: #ffc451;
+  --my-color-secondary-rgb: 255, 197, 81;
+  --my-color-secondary-contrast: #ffffff;
+  --my-color-secondary-contrast-rgb: 255, 255, 255;
+  --my-color-secondary-shade: #46b0e0;
+  --my-color-secondary-tint: #62ceff;
+
+  --my-color-tertiary: #e6ecff;
+  --my-color-tertiary-rgb: 230, 236, 255;
+  --my-color-tertiary-contrast: #5983FF;
+  --my-color-tertiary-contrast-rgb: 89, 131, 255;
+  --my-color-tertiary-shade: #d5e0ff;
+  --my-color-tertiary-tint: #f2f5ff;
+
+  --my-color-success: #22c55e;
+  --my-color-success-rgb: 34, 197, 94;
+  --my-color-success-contrast: #ffffff;
+  --my-color-success-contrast-rgb: 255, 255, 255;
+  --my-color-success-shade: #29c467;
+  --my-color-success-tint: #44e283;
+
+  --my-color-danger: #EF4444;
+  --my-color-danger-rgb: 239, 68, 68;
+  --my-color-danger-contrast: #ffffff;
+  --my-color-danger-contrast-rgb: 255, 255, 255;
+  --my-color-danger-shade: #e04055;
+  --my-color-danger-tint: #ff5b71;
+
+  --my-color-warning: #ffc409;
+  --my-color-warning-rgb: 255,196,9;
+  --my-color-warning-contrast: #ffffff;
+  --my-color-warning-contrast-rgb: 255, 255, 255;
+  --my-color-warning-shade: #e0ac08;
+  --my-color-warning-tint: #ffca22;
+
+  --my-color-medium: #92949c;
+  --my-color-medium-rgb: 146,148,156;
+  --my-color-medium-contrast: #ffffff;
+  --my-color-medium-contrast-rgb: 255, 255, 255;
+  --my-color-medium-shade: #808289;
+  --my-color-medium-tint: #9d9fa6;
+
+  --my-color-surface: #F5F5F7;
+  --my-color-surface-rgb: 245, 245, 247;
+
+  --my-color-surface-contrast: #656565;
+  --my-color-surface-contrast-rgb: 101, 101, 101;
+
+  --my-color-divider: #e5e7eb;
+  --my-color-divider-rgb: 229, 231, 235;
+
+  --my-background-color: #ffffff;
+  --my-background-color-rgb: 255,255,255;
+
+  --my-text-color: #000000;
+	--my-text-color-rgb: 0,0,0;
+
+  --my-text-color-2: #374151;
+	--my-text-color-2-rgb: 55, 65, 81;
+
+  --my-text-color-3: #B0B1B8;
+	--my-text-color-3-rgb: 176, 177, 184;
+
+  --my-color-toast-bg: #4d4d4d;
+  --my-color-toast-bg-rgb: 77, 77, 77;
+
+  --my-color-on-toast-bg: #ffffff;
+  --my-color-on-toast-bg-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
