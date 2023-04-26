@@ -15,12 +15,12 @@ module.exports = {
     'vue',
   ],
   rules: {
-    'vue/component-name-in-template-casing': ['error', 'kebab-case', {
-      registeredComponentsOnly: false,
-      ignores: [],
-    }],
-    'no-console': 'warn',
-    'no-new': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'vue/no-deprecated-slot-attribute': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'indent': ['error', 2, { SwitchCase: 1 }],
     'curly': ['error', 'all'],
+    'quotes': ['error', 'single'],
+    'no-console': 'off',
   },
 }
