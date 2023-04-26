@@ -1,15 +1,15 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 
-const apiUrl = process.env.VUE_APP_API_URL as string
+const apiUrl = import.meta.env.VITE_API_BASE_URL
 
 export abstract class HTTPBaseService {
-  protected axiosInstance: AxiosInstance
+  protected instance: AxiosInstance
   protected readonly baseURL: string
 
   public constructor(baseURL = apiUrl) {
     this.baseURL = baseURL
-    this.axiosInstance = axios.create({
+    this.instance = axios.create({
       baseURL,
       timeout: 40 * 1000,
     })
@@ -19,37 +19,37 @@ export abstract class HTTPBaseService {
   }
 
   private initializeRequestInterceptor = () => {
-    this.axiosInstance.interceptors.request.use(this.handleRequest)
+    this.instance.interceptors.request.use(
+      (config) => {
+        return config
+      },
+      (error) => {
+        return Promise.reject(error)
+      },
+    )
   }
 
   private initializeResponseInterceptor = () => {
-    this.axiosInstance.interceptors.response.use((response) => {
-      return response.data
-    }, this.handleError)
-  }
-
-  private handleRequest = (config: AxiosRequestConfig) => {
-    return config
-  }
-
-  private handleError = async (error: AxiosError) => {
-    const errorMessage = error.response?.data
-      ? (error.response?.data as any).message
-      : error.message
-
-    console.log(error.code!, errorMessage)
-    throw error
+    this.instance.interceptors.response.use(
+      (response) => {
+        return response.data
+      },
+      async (error: AxiosError) => {
+        console.error(`[AxiosError] code = ${error.code}, ${error.message}`)
+        throw error
+      },
+    )
   }
 
   protected post<T, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>) {
-    return this.axiosInstance.post<unknown, T>(url, data, config)
+    return this.instance.post<unknown, T>(url, data, config)
   }
 
   protected get<T, D = any>(url: string, config?: AxiosRequestConfig<D>) {
-    return this.axiosInstance.get<unknown, T>(url, config)
+    return this.instance.get<unknown, T>(url, config)
   }
 
   protected head<T, D = any>(url: string, config?: AxiosRequestConfig<D>) {
-    return this.axiosInstance.head<unknown, T>(url, config)
+    return this.instance.head<unknown, T>(url, config)
   }
 }
