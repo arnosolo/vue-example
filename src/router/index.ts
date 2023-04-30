@@ -4,11 +4,11 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('@src/views/Home.vue'),
+    component: () => import('@/views/Home.vue'),
   },
   {
     path: '/:path(.*)*',
-    component: () => import('@src/views/NotFound.vue'),
+    component: () => import('@/views/NotFound.vue'),
   },
 ]
 

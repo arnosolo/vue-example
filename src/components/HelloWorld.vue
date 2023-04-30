@@ -1,11 +1,13 @@
 <script setup lang="ts">
-
+defineProps<{
+  msg: string
+}>()
 </script>
 
 <template>
   <div>
     <h1 text-center>
-      Hello World
+      {{ msg }}
     </h1>
   </div>
 </template>
