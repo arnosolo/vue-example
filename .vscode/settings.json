@@ -7,4 +7,9 @@
         "antfu",
         "vite"
     ],
+    "i18n-ally.localesPaths": [
+        "src/locales",
+        "src/locales/i18n",
+        "src/locales/lang"
+    ],
 }
